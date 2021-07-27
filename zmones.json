@@ -1,0 +1,35 @@
+[
+    {
+        "vardas": "Jonas",
+        "pavarde": "Jonaitis",
+        "telefonai": "+37069920000",
+        "email": "jonasgmail.com",
+        "skolingas": 1988,
+        "adresas": {
+            "miestas": "Vilnius",
+            "gatve": "Gedimino",
+            "namas": 9
+        }
+    },
+    {
+        "vardas": "Petras",
+        "pavarde": "Petraitis",
+        "telefonai": "+37067723150 ",
+        "email": [
+            "petras@gmail.com",
+            "p@darbas.lt",
+            "petriukas@namai.lt"
+        ],
+        "gimimoMetai": 1983
+    },
+    {
+        "vardas": "Antanas",
+        "pavarde": "Antanaitis",
+        "telefonai": [
+            "+37011122555",
+            "+37066995566"
+        ],
+        "email": "antanas@gmail.com ",
+        "gimimoMetai": 2001
+    }
+]
