@@ -6,4 +6,7 @@ class Puodukas {
     }
 }
 
-export { Puodukas }
+export { Puodukas } 
+// sitame export nera tokia pati sintakse kaip module.exports 
+// module.sexports rasoma servizas: Puodukas
+// o cia Puodukas as servizas
