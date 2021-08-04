@@ -1,3 +1,5 @@
+import * as fs from "fs/promises";
+
 // paprasta funkcija
 function suma(a, b) {
     return a + b;
@@ -63,3 +65,40 @@ console.log("Labas");
 
 // await naudojamas vietoj then, pries tai naudoto ir isgaunama promiso reiksme
 // pries await yra viena dalis, po await visos komandos bus then'e
+
+
+async function suma4(a, b) {
+    if (a < 0 || b < 0) {
+        throw "as sudedu tik teigiamus skaicius";
+    }
+    return a + b;
+}
+try {
+    let rezultatas = await suma4(1, -2);
+    console.log(rezultatas);
+} catch (err) {
+    console.log("parskrido klaida: " + err);
+}
+// (err) atspausdinama throw reiksme
+// Operatorius throw, ispeja apie klaida, kuria patys apsirasem
+// try catch gaudo klaida
+// try tikimasi, kad gali  buti klaida
+// catch pagauta klaida
+
+let duomenys = "";
+
+try {
+    duomenys += await fs.readFile("a.txt");
+    //  duomenys += await fs.readFile("a1.txt"); mes klaida, nes nera tokio failo
+    duomenys += await fs.readFile("b.txt"); 
+    duomenys += await fs.readFile("c.txt");
+} catch (err) {
+    console.log("Klaida skaitant is failo: ", err);
+}
+console.log(duomenys);
+
+// kai nera failo ("b.txt"), pradzioje mes klaida, po to atspausdins perskaityta faila a.txt
+// nors c.txt failas yra, jo neskaitys, nes b.txt mete klaida ir promisas buvo reject'intas ir toliau nurodymu nevykdo
+
+// be await fs.readfile grazina promisa 
+// su await atspausdina perskaityto failo turini, jei nera klaidu
